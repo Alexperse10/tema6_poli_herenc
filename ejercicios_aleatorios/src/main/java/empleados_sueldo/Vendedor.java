@@ -2,7 +2,7 @@ package empleados_sueldo;
 
 public class Vendedor extends Empleado {
 
-    private static int comision=300; 
+    private static int comision=300;
 
     public Vendedor(String nombre, double salariobase) {
         super(nombre, salariobase);
