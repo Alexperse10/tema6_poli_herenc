@@ -12,7 +12,7 @@ public class validarTarjeta {
                 return false;
             }
 
-
+                // return texto.matches("\\d+");  para validar que sea numerico
         }
 
         return true;
