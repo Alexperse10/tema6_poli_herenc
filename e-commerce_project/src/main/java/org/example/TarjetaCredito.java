@@ -12,11 +12,11 @@ public class TarjetaCredito extends MetodoPago{
 
     @Override
     public void procesarPago(double importe) {
-        System.out.println("Procesando pago de " +importe +" € con tarjeta de credito visa");
+        System.out.println("Procesando pago de " +importe +" € con tarjeta de credito "+tipo);
     }
 
     public boolean validarTarjeta() {
-        if (nro_tarjeta.length() != 16 || (!tipo.equalsIgnoreCase("VISA") && !tipo.equalsIgnoreCase("MASTERCARD") && !tipo.equalsIgnoreCase("MAESTRO"))){
+        if (nro_tarjeta.length() != 16 || !nro_tarjeta.matches ("\\d{16}") || !tipo.equalsIgnoreCase("VISA") && !tipo.equalsIgnoreCase("MASTERCARD") && !tipo.equalsIgnoreCase("MAESTRO")){
             return false;
 
         }

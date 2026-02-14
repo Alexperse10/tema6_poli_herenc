@@ -17,7 +17,7 @@ public class Bizum extends MetodoPago{
 
         }
         this.pin = Integer.parseInt(pin_aleat);
-        System.out.println("pin generado trampa: "+pin_aleat);
+        System.out.println("[Chivato Pin]: "+pin_aleat);
 
     }
 
@@ -29,7 +29,7 @@ public class Bizum extends MetodoPago{
     public boolean validarbizum(String pin_usuario) {
 
 
-        if (telefono.length() != 9 || !pin_usuario.matches("\\d{6}")){
+        if (telefono.length() != 9 || !telefono.matches("\\d{9}") || !pin_usuario.matches("\\d{6}")){
             return false;
         }
 

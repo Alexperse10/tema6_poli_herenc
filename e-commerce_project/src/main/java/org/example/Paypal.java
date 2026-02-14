@@ -11,11 +11,11 @@ public class Paypal extends MetodoPago{
 
     @Override
     public void procesarPago(double importe) {
-        System.out.println("Procesando pago "+importe+" € con bizum");
+        System.out.println("Procesando pago "+importe+" € con paypal");
     }
 
-    public boolean validarPaypal() {
-        if (!cuenta.matches("^[A-Za-z0-9+_.-]+@alu.edu.gva.es$") || saldo<23){
+    public boolean validarPaypal(double importe) {
+        if (!cuenta.matches("^[A-Za-z0-9+_.-]+@alu.edu.gva.es$") || importe>saldo || importe<=0){
             return false;
         }
         return true;
