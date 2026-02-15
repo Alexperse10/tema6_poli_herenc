@@ -9,7 +9,7 @@ Los métodos de pago disponibles son:
 - PayPal
 - Bizum
 
-El objetivo principal ha sido practicar Programación Orientada a Objetos, usando herencia, abstracción y polimorfismo, además de hacer validaciones para comprobar que los datos introducidos sean correctos antes de procesar el pago.
+El objetivo ha sido practicar Programación Orientada a Objetos, usando herencia, abstracción y polimorfismo, además de hacer validaciones para comprobar que los datos introducidos sean correctos antes de procesar el pago.
 
 ---
 
@@ -91,7 +91,7 @@ Tiene dos métodos importantes:
 - `iniciarPago()`: muestra el menú, pide los datos al usuario, crea el método de pago correspondiente y valida.
 - `realizarPago(MetodoPago metodo)`: pide el importe y llama a `procesarPago()`.
 
-En esta parte se usa polimorfismo porque se trabaja con el tipo `MetodoPago`, pero realmente puede ser un objeto TarjetaCredito, Paypal o Bizum.
+En esta parte se usa polimorfismo porque se trabaja con el tipo `MetodoPago`, pero puede ser un objeto TarjetaCredito, Paypal o Bizum.
 
 ---
 
