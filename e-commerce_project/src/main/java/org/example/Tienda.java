@@ -2,7 +2,22 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * Clase Tienda encargada de gestionar el programa.
+ *
+ * Permite al usuario elegir un método de pago, validar los datos introducidos
+ * y procesar el pago mediante polimorfismo.
+ */
+
 public class Tienda  {
+    /**
+     * pide al usuario la cantidad a pagar y ejecuta el procesamiento del pago.
+     *
+     * Se aplica polimorfismo, ya que el método procesarPago() se ejecutará
+     * dependiendo del tipo  del objeto que recibe.
+     *
+     * @param metodo método de pago elegido por el usuario
+     */
 
     public static void realizarPago (MetodoPago metodo){
         Scanner sc = new Scanner(System.in);
@@ -12,6 +27,12 @@ public class Tienda  {
         metodo.procesarPago(importe);
 
     }
+    /**
+     * Método principal que inicia el sistema de pago.
+     *
+     * Muestra un menú al usuario para elegir el método de pago y pide los datos
+     * necesarios para validarlos antes de procesar el pago.
+     */
 
     public static void iniciarPago() {
         Scanner sc = new Scanner(System.in);

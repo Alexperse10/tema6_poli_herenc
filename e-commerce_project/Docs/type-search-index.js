@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example","l":"AppEcommerce"},{"p":"org.example","l":"Bizum"},{"p":"org.example","l":"Main"},{"p":"org.example","l":"MetodoPago"},{"p":"org.example","l":"Paypal"},{"p":"org.example","l":"TarjetaCredito"},{"p":"org.example","l":"Tienda"}];updateSearchResults();

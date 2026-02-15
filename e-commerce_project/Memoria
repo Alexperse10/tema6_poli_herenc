@@ -1,0 +1,106 @@
+# Práctica 1 - Sistema de pago para un e-commerce
+
+## 1. Introducción
+En esta práctica se ha desarrollado un sistema de pagos para un e-commerce de cursos online.
+El sistema permite realizar pagos mediante distintos métodos: Tarjeta de crédito, PayPal y Bizum.
+
+El objetivo principal ha sido aplicar conceptos de Programación Orientada a Objetos (POO) como:
+- Abstracción
+- Herencia
+- Polimorfismo
+
+Además, se han implementado validaciones para comprobar que los datos introducidos por el usuario sean correctos antes de procesar un pago.
+
+---
+
+## 2. Estructura del proyecto
+El proyecto está formado por las siguientes clases:
+
+- `MetodoPago` (clase abstracta)
+- `TarjetaCredito`
+- `Paypal`
+- `Bizum`
+- `Tienda`
+- `AppEcommerce`
+
+---
+
+## 3. Explicación del funcionamiento
+
+### 3.1 Clase MetodoPago
+Es una clase abstracta que define el método `procesarPago(double importe)`.
+Las subclases están obligadas a implementar este método.
+
+### 3.2 TarjetaCredito
+Permite procesar pagos con tarjeta.
+Incluye el método `validarTarjeta()` que comprueba:
+- longitud de 16 caracteres
+- que sean solo números
+- tipo permitido (VISA, MASTERCARD o MAESTRO)
+
+### 3.3 Paypal
+Permite procesar pagos con PayPal.
+Incluye el método `validarPaypal(double importe)` que comprueba:
+- formato correcto del correo
+- saldo suficiente
+- importe positivo
+
+### 3.4 Bizum
+Permite procesar pagos con Bizum.
+Al crear el objeto genera un PIN aleatorio de 6 dígitos y lo imprime como "chivato".
+Incluye el método `validarbizum(String pin_usuario)` que valida:
+- teléfono con 9 dígitos
+- PIN con 6 dígitos
+- coincidencia del PIN introducido con el generado
+
+### 3.5 Tienda
+Gestiona el flujo principal del programa.
+Contiene:
+- `iniciarPago()`: muestra el menú, pide datos y valida.
+- `realizarPago(MetodoPago metodo)`: solicita el importe y procesa el pago mediante polimorfismo.
+
+### 3.6 AppEcommerce
+Clase principal que contiene el método `main()` y ejecuta `Tienda.iniciarPago()`.
+
+---
+
+## 4. Plan de pruebas
+Se han realizado pruebas manuales para verificar el funcionamiento del sistema.
+
+### Tarjeta de crédito
+- Tarjeta válida (16 dígitos + tipo correcto)
+- Tarjeta inválida por longitud
+- Tarjeta inválida por contener letras
+- Tipo de tarjeta inválido
+
+### PayPal
+- Correo válido y saldo suficiente
+- Correo inválido
+- Saldo insuficiente
+- Importe 0 o negativo
+
+### Bizum
+- Teléfono válido y PIN correcto
+- Teléfono incorrecto
+- PIN incorrecto
+- PIN con longitud incorrecta
+
+---
+
+## 5. Pruebas unitarias (JUnit5)
+Se han implementado pruebas unitarias con JUnit5 para comprobar las validaciones principales:
+- `validarTarjeta()`
+- `validarPaypal()`
+- `validarbizum()`
+
+---
+
+## 6. Documentación Javadoc
+Se ha generado la documentación Javadoc del proyecto mediante IntelliJ IDEA.
+La documentación se encuentra en la carpeta `Docs/` y puede abrirse desde el archivo `index.html`.
+
+---
+
+## 7. Conclusión
+Esta práctica ha permitido aplicar Programación Orientada a Objetos mediante abstracción, herencia y polimorfismo.
+También se han implementado validaciones para garantizar que los datos introducidos por el usuario sean correctos antes de procesar un pago.
