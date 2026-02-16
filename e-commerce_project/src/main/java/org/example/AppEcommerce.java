@@ -2,11 +2,11 @@ package org.example;
 /**
  * Clase principal de la aplicación.
  *
- * Contiene el método main, que inicia el programa.
+ * Contiene el metodo main, que inicia el programa.
  */
 public class AppEcommerce {
     /**
-     * Método que inicia el programa.
+     * Metodo que inicia el programa.
      *
      * @param args argumentos de entrada.
      */

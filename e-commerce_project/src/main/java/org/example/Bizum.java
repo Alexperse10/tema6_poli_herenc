@@ -34,7 +34,7 @@ public class Bizum extends MetodoPago{
 
     }
     /**
-     * Procesa el pago mediante Bizum.
+     * Procesa el pago con Bizum.
      *
      * @param importe cantidad de dinero que se desea pagar
      */
