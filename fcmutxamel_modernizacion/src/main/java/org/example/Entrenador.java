@@ -9,7 +9,7 @@ public class Entrenador extends Mutxamelfc implements AccionesDeportivas{
         this.formacionPreferida = formacionPreferida;
     }
 
-    
+
 
     public Equipos getEquipo() {
         return equipo;
