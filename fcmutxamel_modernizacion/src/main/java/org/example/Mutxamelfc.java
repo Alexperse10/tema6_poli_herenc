@@ -4,7 +4,7 @@ public abstract class Mutxamelfc implements Funcionesintegrales{ // la clase abs
     private String nombre;
     private int edad;
 
-public Mutxamelfc() {
+public Mutxamelfc(String nombre, int edad) {
     this.nombre = nombre;
     this.edad = edad;
 }

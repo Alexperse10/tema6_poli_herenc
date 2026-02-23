@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public enum Equipos {
     Benjamin,
     alevin,
@@ -7,4 +9,6 @@ public enum Equipos {
     cadete,
     juvenil,
     senior
+
+
 }

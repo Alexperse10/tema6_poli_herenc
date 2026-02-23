@@ -4,9 +4,15 @@ public class Entrenador extends Mutxamelfc implements AccionesDeportivas{
     private Equipos equipo;
     private String formacionPreferida;
 
-    public Entrenador(Equipos equipo, String formacionPreferida) {
-        this.equipo = equipo;
+    public Entrenador(Equipos equipo, String formacionPreferida, String nombre, int edad) throws FormatoCorrecto {
+        super(nombre, edad);
+
+
+        if (!formacionPreferida.matches("\\d-\\d-\\d")){
+            throw new FormatoCorrecto();
+        }
         this.formacionPreferida = formacionPreferida;
+        this.equipo = equipo;
     }
 
 
@@ -28,17 +34,17 @@ public class Entrenador extends Mutxamelfc implements AccionesDeportivas{
     }
 
     public void planificarEntrenamiento() {
-
+        System.out.println("el entrandor "+getNombre()+ " esta entrenando al equipo "+getEquipo());
     }
 
     public void hacerCambios() {
-
+        System.out.println("el entrenador ha hecho un cambio "+Equipos.cadete );
     }
 
 
     @Override
     public void entrenar() {
-
+        System.out.println("el entrador "+getNombre()+ " esta entrenando");
     }
 
     @Override
@@ -59,5 +65,13 @@ public class Entrenador extends Mutxamelfc implements AccionesDeportivas{
     @Override
     public void celebrar() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Entrenador{" +
+                "equipo=" + equipo +
+                ", formacionPreferida='" + formacionPreferida + '\'' +
+                '}';
     }
 }

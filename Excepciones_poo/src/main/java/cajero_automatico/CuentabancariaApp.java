@@ -29,7 +29,7 @@ public class CuentabancariaApp {
                         System.out.println("cantidad a retirar");
                         double retirar = sc.nextDouble();
                         cuentabancaria1.retirarsaldo(retirar);
-                        break; 
+                        break;
 
                     case '3':
                         System.out.println("consultar saldo");

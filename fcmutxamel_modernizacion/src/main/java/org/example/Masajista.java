@@ -4,14 +4,15 @@ public class Masajista extends Mutxamelfc{
     private String titulacion;
     private int anosExperiencia;
 
-    public Masajista(String titulacion, int anosExperiencia) {
+    public Masajista(String titulacion, int anosExperiencia, String nombre, int edad) {
+        super(nombre,edad);
         this.titulacion = titulacion;
         this.anosExperiencia= anosExperiencia;
 
     }
 
     public void darMasaje(Jugador jugador){
-
+        System.out.println("el jugador "+jugador.getNombre() + "esta recibiendo un masaje por el fisio "+getNombre());
     }
 
 

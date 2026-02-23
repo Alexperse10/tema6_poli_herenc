@@ -1,18 +1,24 @@
 package org.example;
 
 import java.sql.Struct;
+import java.util.ArrayList;
 
 public class Acompañante extends Mutxamelfc{
-    private Jugador integrante;
+    private ArrayList<Jugador> integrante;
     private String parentesto;
 
-    public Acompañante(String parentesto, Jugador integrante) {
+    public Acompañante(String parentesto, Jugador integrante, String nombre, int edad) {
+        super(nombre, edad);
         this.parentesto = parentesto;
-        this.integrante = integrante;
+        this.integrante = new ArrayList<>();
     }
 
-    public void animarEquipo(){
 
+    public void añadirjugador(Jugador jugador){
+        integrante.add(jugador);
+    }
+    public void animarEquipo(){
+System.out.println("el acompañante esta animando ");
 
     }
 
@@ -20,7 +26,7 @@ public class Acompañante extends Mutxamelfc{
         return parentesto;
     }
 
-    public Jugador getIntegrante() {
+    public ArrayList<Jugador> getIntegrante() {
         return integrante;
     }
 
@@ -28,7 +34,7 @@ public class Acompañante extends Mutxamelfc{
         this.parentesto = parentesto;
     }
 
-    public void setIntegrante(Jugador integrante) {
+    public void setIntegrante(ArrayList<Jugador> integrante) {
         this.integrante = integrante;
     }
 
@@ -45,5 +51,13 @@ public class Acompañante extends Mutxamelfc{
     @Override
     public void celebrar() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Acompañante{" +
+                "integrante=" + integrante +
+                ", parentesto='" + parentesto + '\'' +
+                '}';
     }
 }
