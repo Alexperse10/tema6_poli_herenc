@@ -4,12 +4,16 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
     private Equipos categoria;
     private int dorsal;
     private Posiciones posicion;
+    //private static int contador =0;
+    //private int id;
 
     public Jugador(int dorsal, Equipos categoria, Posiciones posicion, String nombre, int edad) {
         super(nombre, edad);
         this.dorsal = dorsal;
         this.categoria = categoria;
         this.posicion = posicion;
+        //contador++;
+        //this.id = contador;
     }
 
     public void calentar() {
@@ -22,6 +26,14 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
     public void marcargol() {
         System.out.println("el jugador "+getNombre() +" ha marcado GOOOOO!!!!");
     }
+
+   // public int getContador() {
+        //return contador;
+   // }
+
+    //public int getId() {
+        //return id;
+   //}
 
     @Override
     public void concentrarse() {
@@ -66,4 +78,15 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
         return dorsal;
     }
 
+    @Override
+    public String toString() {
+        return "Jugador{ " +
+                // id +" ,"+
+                " categoria=" + categoria +
+                ", dorsal=" + dorsal +
+                ", posicion=" + posicion +
+                ", nombre="+getNombre() +
+                ", edad="+getEdad()+
+                '}';
+    }
 }
