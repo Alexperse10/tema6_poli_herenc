@@ -38,7 +38,7 @@ public class Entrenador extends Mutxamelfc implements AccionesDeportivas{
     }
 
     public void hacerCambios() {
-        System.out.println("el entrenador ha hecho un cambio "+Equipos.cadete );
+        System.out.println("el entrenador ha hecho un cambio "+Equipos.CADETE );
     }
 
 

@@ -45,7 +45,7 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
 
     @Override
     public void jugarPartido(String rival) {
-        System.out.println("el equipo "+Equipos.senior +"esta jugando un partido contra "+rival);
+        System.out.println("el equipo "+Equipos.SENIOR +"esta jugando un partido contra "+rival);
     }
 
     @Override
