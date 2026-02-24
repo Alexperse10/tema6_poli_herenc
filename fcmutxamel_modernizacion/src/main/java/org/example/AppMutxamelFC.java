@@ -11,6 +11,7 @@ public class AppMutxamelFC {
         char opcion;
         char opcion1;
         ArrayList<Jugador> listajugadores = new ArrayList<>();
+        ArrayList<Acompañante> listaacompañante = new ArrayList<>();
         do {
 
             System.out.println(" == App mantenimiento del Mutxamel ==");
@@ -88,7 +89,7 @@ public class AppMutxamelFC {
 
                                 System.out.println("selecciona una opcion --->");
                                 int opcion_jugador = sc.nextInt();
-
+                                sc.nextLine();
                                 Jugador jugadorseleccion = listajugadores.get(opcion_jugador);
 
                                 System.out.println("Modificando jugador " +jugadorseleccion);
@@ -104,26 +105,96 @@ public class AppMutxamelFC {
                                       System.out.println("Nuevo nombre: ");
                                       String nuevo_nombre = sc.nextLine();
                                       jugadorseleccion.setNombre(nuevo_nombre);
+                                      System.out.println("el nombre esta actualizado");
+                                      break;
 
                                     case "edad":
                                         System.out.println("nueva edad");
                                         int nueva_edad = sc.nextInt();
+                                        sc.nextLine();
                                         jugadorseleccion.setEdad(nueva_edad);
-
+                                        System.out.println("edad actualizada");
+                                        break;
 
                                     case "categoria":
                                         System.out.println("Nueva categoria");
-                                        int nueva_categoria = sc.nextInt();
-                                        jugadorseleccion.
+                                        for (Equipos equipo : Equipos.values()){
+                                            System.out.print(equipo);
+                                        }
+                                        Equipos nuevacategoria = Equipos.valueOf(sc.next().toUpperCase());
+                                        jugadorseleccion.setCategoria(nuevacategoria);
+                                        System.out.println("Equipo actualizado");
+                                        break;
+
+                                    case "posicion":
+                                        System.out.println("Selecciona la posicion");
+                                        for (Posiciones posicion : Posiciones.values()){
+                                            System.out.println(posicion);
+
+                                        }
+                                        Posiciones posicion_seleccion = Posiciones.valueOf(sc.next().toUpperCase());
+                                        jugadorseleccion.setPosicion(posicion_seleccion);
+                                        break;
+
+                                    case "dorsal":
+                                        System.out.println("que dorsal deseas introducir");
+                                        int nuevo_dorsal = sc.nextInt();
+                                        boolean ocupado = false;
+
+                                        for (Jugador jugador_ : listajugadores) {
+                                            if (jugador_ != jugadorseleccion && jugador_.getCategoria() == jugadorseleccion.getCategoria()
+                                            && jugador_.getDorsal() == nuevo_dorsal) {
+                                                ocupado = true;
+                                                break;
+                                            }
+                                        }
+
+                                        if (ocupado) {
+                                            System.out.println("Lo siento el dorsal ya esta asignado");
+                                        }else {
+                                            jugadorseleccion.setDorsal(nuevo_dorsal);
+                                            System.out.println("dorsal actualizado");
+                                        }
+                                        break;
+                                    default:
+                                        System.out.println("seleccion incorrecta");
 
                                 }
 
+                                break;
+                            case '3':
+                                System.out.println("seleccionar jugador");
+                                int op_jug = sc.nextInt();
+                                sc.nextLine();
+                                for (int i=0; i<listajugadores.size(); i++){
+                                    Jugador jugador = listajugadores.get(i);
+                                    System.out.println("["+i+"]"+listajugadores.get(i));
 
+                                }
+                                jugadorseleccion = listajugadores.get(op_jug);
 
+                                if (jugadorseleccion.getCategoria() != Equipos.SENIOR){
+                                    System.out.println("debe ser de equipo senior");
+                                    break;
+                                }
 
+                                System.out.println("introduce el nombre");
+                                String nombre_acom = sc.nextLine();
+                                System.out.println("introducir edad");
+                                int edad_acom = sc.nextInt();
+                                sc.nextLine();
+                                System.out.println("introducir parentesco");
+                                String parentesco_acom = sc.nextLine();
 
+                                Acompañante nuevo_acompañante = new Acompañante(parentesco_acom,nombre_acom,edad_acom);
 
+                                nuevo_acompañante.añadirjugador(jugadorseleccion);
 
+                                System.out.println("Acompañante agregado");
+
+                                listaacompañante.add(nuevo_acompañante);
+
+                                break;
 
                             case 'x':
                                 System.out.println("Volviendo al menu principal...");
@@ -132,6 +203,7 @@ public class AppMutxamelFC {
                             default:
                                 System.out.println("la opcion no es correcta");
                         }
+                        break;
 
                     } while (opcion1 != 'x');
 

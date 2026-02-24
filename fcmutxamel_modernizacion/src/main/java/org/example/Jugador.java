@@ -27,7 +27,22 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
         System.out.println("el jugador "+getNombre() +" ha marcado GOOOOO!!!!");
     }
 
-   // public int getContador() {
+    public void setPosicion(Posiciones posicion) {
+        this.posicion = posicion;
+    }
+
+    public Equipos getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Equipos categoria) {
+        this.categoria = categoria;
+    }
+
+    public Posiciones getPosicion() {
+        return posicion;
+    }
+    // public int getContador() {
         //return contador;
    // }
 

@@ -7,7 +7,7 @@ public class Acompañante extends Mutxamelfc{
     private ArrayList<Jugador> integrante;
     private String parentesto;
 
-    public Acompañante(String parentesto, Jugador integrante, String nombre, int edad) {
+    public Acompañante(String parentesto, String nombre, int edad) {
         super(nombre, edad);
         this.parentesto = parentesto;
         this.integrante = new ArrayList<>();
