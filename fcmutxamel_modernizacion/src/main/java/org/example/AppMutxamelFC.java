@@ -2,15 +2,31 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+/**
+ * Clase principal de la aplicación.
+ * Desde aquí se gestiona el mantenimiento del Mutxamel FC.
+ * Permite crear y modificar jugadores, crear acompañantes
+ * y consultar información mediante un menú por consola.
+ */
 
 public class AppMutxamelFC {
-
+    /**
+     * Metodo principal donde se ejecuta toda la aplicación.
+     * Usa menus con Scanner para interactuar con el usuario.
+     *
+     * @param args argumentos del programa
+     * @throws FormatoCorrecto si la formacion del entrenador no es valida
+     * @throws Excepcionjugadorequipo si se intenta repetir dorsal en el mismo equipo
+     */
     public static void main(String[] args) throws FormatoCorrecto, Excepcionjugadorequipo {
 
         Scanner sc = new Scanner(System.in);
         char opcion;
         char opcion1;
+
+        /** lista donde se guardan los jugadores */
         ArrayList<Jugador> listajugadores = new ArrayList<>();
+        /** lista donde se guardan los acompañantes */
         ArrayList<Acompañante> listaacompañante = new ArrayList<>();
         do {
 

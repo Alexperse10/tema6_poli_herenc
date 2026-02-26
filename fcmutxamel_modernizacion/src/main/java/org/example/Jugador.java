@@ -1,11 +1,24 @@
 package org.example;
-
+/**
+ * Clase que representa a un jugador del Mutxamel FC.
+ * Hereda de Mutxamelfc y además implementa la interfaz AccionesDeportivas.
+ * Tiene su categoria, dorsal y posicion dentro del campo.
+ */
 public class Jugador extends Mutxamelfc implements AccionesDeportivas{
     private Equipos categoria;
     private int dorsal;
     private Posiciones posicion;
     //private static int contador =0;
     //private int id;
+
+    /**
+     * Constructor del jugador
+     * @param dorsal numero del jugador
+     * @param categoria categoria del equipo
+     * @param posicion posicion en el campo
+     * @param nombre nombre del jugador
+     * @param edad edad del jugador
+     */
 
     public Jugador(int dorsal, Equipos categoria, Posiciones posicion, String nombre, int edad) {
         super(nombre, edad);
@@ -15,14 +28,16 @@ public class Jugador extends Mutxamelfc implements AccionesDeportivas{
         //contador++;
         //this.id = contador;
     }
-
+    /** el jugador empieza a calentar antes del partido */
     public void calentar() {
-
+System.out.println("esta calentando ");
     }
-
+    /** el jugador descansa despues del entranamiento */
     public void descansa() {
         System.out.println("el jugador "+getNombre()+ "esta descansado");
     }
+
+    /** metodo para cuando marca un gol */
     public void marcargol() {
         System.out.println("el jugador "+getNombre() +" ha marcado GOOOOO!!!!");
     }
